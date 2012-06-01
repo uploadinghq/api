@@ -17,14 +17,14 @@ RESPONSE
 ```xml
 <?xml version="1.0"?>
 <user>
-            <user_id>1990936</user_id>
-            <account_status>active</account_status>
-            <nick_name></nick_name>
-            <files_size>177.86605358123796</files_size>
-            <files_size_limit>0</files_size_limit>
-            <files_count>108</files_count>
-            <premium_expire>1333698313</premium_expire><
-/user>
+   <user_id>1990936</user_id>
+   <account_status>active</account_status>
+   <nick_name></nick_name>
+   <files_size>177.86605358123796</files_size>
+   <files_size_limit>0</files_size_limit>
+   <files_count>108</files_count>
+   <premium_expire>1333698313</premium_expire>
+</user>
 
 ```
 ####
@@ -80,8 +80,8 @@ RESPONSE
 ```xml
 <?xml version="1.0"?>
 <error>
- <message>Request method not expected (generally should be GET or POST)</message>
- <hint>Use correct method for this url</hint>
+   <message>Request method not expected (generally should be GET or POST)</message>
+   <hint>Use correct method for this url</hint>
 </error>
 ```
 
@@ -105,17 +105,15 @@ RESPONSE
 ```xml
 <?xml version="1.0"?>
 <user>
-            <user_id>1990936</user_id>
-            <account_status>active</account_status>
-            <nick_name></nick_name>
-            <files_size>177.86605358123796</files_size>
-            <files_size_limit>0</files_size_limit>
-            <files_count>108</files_count>
-            <premium_expire>1333698313</premium_expire>
+   <user_id>1990936</user_id>
+   <account_status>active</account_status>
+   <nick_name></nick_name>
+   <files_size>177.86605358123796</files_size>
+   <files_size_limit>0</files_size_limit>
+   <files_count>108</files_count>
+    <premium_expire>1333698313</premium_expire>
 </user>
 ```
-
-
 
 ######GET /user/files  --NOT COMPLETED--
 
@@ -193,7 +191,35 @@ RESPONSE
 </file>
 ```
 
+######POST /files/upload 
 
+Description: prepares upload, gets storage file link
 
+request fields
 
+folder_id - required, int
 
+file_name - required
+
+file_size - required, int
+
+sample
+
+REQUEST
+```bash
+curl -k --data "folder_id=3432&file_name=sample.txt&file_size=11112" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/files/upload
+```
+
+RESPONSE
+```xml
+<?xml version="1.0"?>
+<file>
+   <code>1172aec8</code>
+   <name>sample.txt</name>
+   <size>11112</size>
+   <file_id>1607</file_id>
+   <upload_url>http://fs19.sluggard.www.dev.uploading.com/upload_file/%3D%3Dgs-FQYCplBXunFVu3BsPj%7CKYuvdqFLPKn8XKIwmWA7Seig5nmXx0iEQsPzGMVOX822z1aap-t%7CketAKnz9BBcj5GnkchBnrDk6YGhYCXjy4wOpl-ngpZmF0A5OgHVT9u87XZUnhK9IvGp4yVO99Tz5vMW8pQ1oUkb7ul3g3QaCuDlAgKhMPNqc</upload_url>
+   <progress_url>http://fs19.sluggard.www.dev.uploading.com/api_progress/%3D%3Dgs-FQYCplBXunFVu3BsPj%7CKYuvdqFLPKn8XKIwmWA7Seig5nmXx0iEQsPzGMVOX822z1aap-t%7CketAKnz9BBcj5GnkchBnrDk6YGhYCXjy4wOpl-ngpZmF0A5OgHVT9u87XZUnhK9IvGp4yVO99Tz5vMW8pQ1oUkb7ul3g3QaCuDlAgKhMPNqc</progress_url>
+   <session_id>004c20d90c2db36a2f074666c4ec45ed</session_id>               
+</file>
+```
