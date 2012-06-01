@@ -1,24 +1,55 @@
-Uploading.com API
+Uploading.com REST API
 =================
 
 #### REST API
 
-description ....
+REST API HOST https://api.uploading.com
 
-REST API URL https://api.dev.uploading.com
+#### HTTP authentication
+You should login with http authorizion by passing your email and password.
 
-You should login with https authorizion by passing your email/login and password.
+REQUEST
+```bash
+curl -k --user  alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/info
+```
 
-#### 
+RESPONSE
+```xml
+<?xml version="1.0"?>
+<user>
+            <user_id>1990936</user_id>
+            <account_status>active</account_status>
+            <nick_name></nick_name>
+            <files_size>177.86605358123796</files_size>
+            <files_size_limit>0</files_size_limit>
+            <files_count>108</files_count>
+            <premium_expire>1333698313</premium_expire><
+/user>
+
+```
+####
 
 #### Response data formats
-JSON and XML are supported for now. 
+JSON and XML are supported for now. By default it is XML. To get response in JSON pass HTTP at header "Accept: aplication/json" 
 
+#####Sample wrong authorization with JSON response
 
-#### Error codes
+REQUEST
+```bash
+curl -k --header "Accept:application/json" --user  alexeygeno@gmail.com:wringpass https://sluggard.api.dev.uploading.com/user/info
+```
+RESPONSE
+```json
+{"error":{"message":"Access denied","hint":"Use correct email\/password"}}
+```
 
-Error codes are returned as standard HTTP response headers . Any additional info is included in the body of HTTP response, JSON or XML-formatted.
-Below you can see errors codes and short description.
+#### HTTP statuses and error codes
+Success status is standart HTTP status 200.
+
+Error codes are returned as standard HTTP status response header.
+Any additional info about error and hint about how tofix it are included in the body of HTTP response.
+
+Below you can see codes and short description.
 
 400 - Bad input parameter
 
@@ -28,19 +59,38 @@ Below you can see errors codes and short description.
 
 405 - Request method is not expected
 
-406 - Data not found
+406 - Data error
 
 500 - Internal server error
+
+#####Sample to do POST request that is not supported for method
+
+REQUEST
+```bash
+ curl -k -v --data "field=val"  --header  "Accept:text/xml" --user  alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/info
+```
+
+HEADER STATUS
+```bash
+< HTTP/1.1 405 Request method is not expected
+```
+
+RESPONSE
+
+```xml
+<?xml version="1.0"?>
+<error>
+ <message>Request method not expected (generally should be GET or POST)</message>
+ <hint>Use correct method for this url</hint>
+</error>
+```
+
+
 
 
 
 
 #### API methods
-
-For any action you should pass such https headers
-
-login password (https authorization)
-Content-type (text/xml and application/json are supported for now)
 
 ######GET /user/info
 
