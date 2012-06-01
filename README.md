@@ -6,7 +6,7 @@ Uploading.com REST API
 REST API HOST https://api.uploading.com
 
 #### HTTP authentication
-You should login with http authorizion by passing your email and password.
+You should login with http authentication by passing your email and password.
 
 REQUEST
 ```bash
@@ -30,13 +30,13 @@ RESPONSE
 ####
 
 #### Response data formats
-JSON and XML are supported for now. By default it is XML. To get response in JSON pass HTTP at header "Accept: aplication/json" 
+JSON and XML are supported for now. By default it is XML. To get response in JSON pass at HTTP header "Accept: aplication/json" 
 
 #####Sample wrong authorization with JSON response
 
 REQUEST
 ```bash
-curl -k --header "Accept:application/json" --user  alexeygeno@gmail.com:wringpass https://sluggard.api.dev.uploading.com/user/info
+curl -k --header "Accept:application/json" --user  alexeygeno@gmail.com:wrongpass https://sluggard.api.dev.uploading.com/user/info
 ```
 RESPONSE
 ```json
@@ -86,64 +86,112 @@ RESPONSE
 ```
 
 
-
-
-
-
 #### API methods
 
 ######GET /user/info
 
-description: Gets info of authed user
+description: gets user info
 
 request fields:none
 
-success response sample in JSON<code><pre>{"user":
-            {
-             "email":"alexeygeno@gmail.com","account_status":"active",
-             "nick_name":"","files_size":"249.67527580261245",
-             "files_size_limit":"0","files_count":"153","premium_expire":"1333698313"
-            }
-}</pre></code>
+sample
 
-######GET /user/files
+REQUEST
+```bash
+curl -k --user  alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/info
+```
 
---TODO--
+RESPONSE
+```xml
+<?xml version="1.0"?>
+<user>
+            <user_id>1990936</user_id>
+            <account_status>active</account_status>
+            <nick_name></nick_name>
+            <files_size>177.86605358123796</files_size>
+            <files_size_limit>0</files_size_limit>
+            <files_count>108</files_count>
+            <premium_expire>1333698313</premium_expire>
+</user>
+```
 
-Description:gets folders/files tree for authed user
 
+
+######GET /user/files  --NOT COMPLETED--
+
+Description: gets folders/files tree
 
 request fields:
 
-folder_id - not required. If it is not passed then all folders and files will  be returned.
+folder_id - requireed, 0 - root folder.
 
-description: Gets info of authed user
+sample
 
-success response sample in JSON
+REQUEST
+```bash
+curl -k --get --data "folder_id=3434" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/files
+```
 
-<code><pre>{"files":{"size":135198738,"folder":
-            [{"folder_id":"3394","name":"aaaa",
-            "create_date":"2012-04-27 18:42:30","access_type":"public","size":3422268,
-            "file":[{"file_id":"319","size":"1711134","downloads_count":"0",
-            "create_date":"2012-04-27 18:42:30","status":"active",
-            "name":"Dscn0162 - \u043a\u043e\u043f\u0438\u044f.jpg",
-            "code":"c72a2de1","description":"","storage_id":"1","folder_id":"3394"},
-            {"file_id":"329","size":"1711134","downloads_count":"0",
-            "create_date":"2012-04-27 18:42:31","status":"active",
-            "name":"Dscn0162 - \u043a\u043e\u043f\u0438\u044f.jpg",
-            "code":"em79c514","description":"","storage_id":"1","folder_id":"3394"}]},
-            {"folder_id":"3330","name":"aaaa","create_date":"2012-04-23 12:48:36","access_type":
-            "public","size":3422268,"file":[{"file_id":"67","size":"1711134","downloads_count":"0",
-            "create_date":"2012-04-19 21:09:46","status":"active",
-            "name":"Dscn0162 - \u043a\u043e\u043f\u0438\u044f.jpg","code":"4m66abde","description":"",
-            "storage_id":"1","folder_id":"3330"},{"file_id":"105","size":"1711134",
-            "downloads_count":"0","create_date":"2012-04-23 18:18:03","status":"active",
-            "name":"Dscn0162 - \u043a\u043e\u043f\u0438\u044f.jpg","code":"ccd8ce4m",
-            "description":"","storage_id":"1","folder_id":"3330"}]},{"folder_id":"3375",
-            "name":"aaaaaa","create_date":"2012-04-27 13:55:49","access_type":"public","size":0},
-            {"folder_id":"3422","name":"aaaaaa","create_date":"2012-04-27 18:42:30","access_type":"public","size":0},
-            {"folder_id":"3367","name":"dsfsfsdf","create_date":"2012-04-27 13:37:25","access_type":"public","size":0}
-            ]}}</pre></code>
+RESPONSE
+```xml
+<?xml version="1.0"?>
+<files>
+           
+</files>
+```
+
+
+######POST /files/rename 
+
+Description: renames file
+
+request fields:
+
+file_id - requireed, int
+
+file_name - required
+
+sample
+
+REQUEST
+```bash
+curl -k --data "file_id=124&file_name=new_name.txt" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/files/rename
+```
+
+RESPONSE
+```xml
+<?xml version="1.0"?>
+<file>
+   <file_id>124</file_id>
+   <file_name>new_name.txt</file_name>
+   <old_file_name>name.txt</old_file_name>               
+</file>
+```
+
+
+######GET /files/link 
+
+Description: gets download file link
+
+request fields:
+
+file_id - requireed, int
+
+sample
+
+REQUEST
+```bash
+curl -k --get --data "file_id=124" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/files/link
+```
+
+RESPONSE
+```xml
+<?xml version="1.0"?>
+<file>
+   <link>http://fs10.sluggard.www.dev.uploading.com/get_file/%3DMQ0ncR29nSAkGTonbQrteTGAPwTSfrDDW7HPzZpqynJLcDNSAtKmjJyiB2E0blFuvAJxUW2Di4bOkYhc6rbmemBXzZMjgPLnLhhL86Y2QmPd48EB-X5BTKVxbQ71AcXeYfp6yTXQXC6eqVJrQd7jlJ4I6RUG28Ww1JCfH5Zud7X7mTWhJqPS1tInA442tA0JlkXpcoNMlLCHK6yPHsLgSgk5BneaprWCrFd%7ChMi1Tp36%7Cs3Fj15SaeqLm8LvLMWQvKA0JwXQBiS1fSYIWyie5ieAxOwRm5pWsnDM-vQ0shBgv5aTj08PUlbxmAEzpdTJLzgGyk2Ufu2Au5zfcD4GUyHv7%7CWBKIe%7CuGO1Gd4hy-z</link>
+   <session_id>5f218f903c6519b57c3e3e71c7c4ab0c</session_id>
+</file>
+```
 
 
 
