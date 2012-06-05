@@ -49,7 +49,7 @@ RESPONSE
 Success status is standart HTTP status 200.
 
 Error codes are returned as standard HTTP status response header.
-Any additional info about errors and hints about how to fix it are included in the body of HTTP response.
+Any additional info about errors and hints how to fix it are included in the body of HTTP response.
 
 Below you can check status codes and short description.
 
@@ -92,11 +92,11 @@ RESPONSE
 
 ######GET /user/info
 
-description: gets user info
+Description: gets user info
 
-request fields:none
+Request fields: none
 
-sample
+#####Sample
 
 REQUEST
 ```bash
@@ -121,11 +121,11 @@ RESPONSE
 
 Description: gets folders/files tree
 
-request fields:
+Request fields:
 
 folder_id - requireed, 0 - root folder.
 
-sample
+#####
 
 REQUEST
 ```bash
@@ -145,13 +145,13 @@ RESPONSE
 
 Description: renames file
 
-request fields:
+Request fields:
 
 file_id - requireed, int
 
 file_name - required
 
-sample
+#####Sample
 
 REQUEST
 ```bash
@@ -173,11 +173,11 @@ RESPONSE
 
 Description: gets download file link
 
-request fields:
+Request fields:
 
 file_id - requireed, int
 
-sample
+#####Sample
 
 REQUEST
 ```bash
@@ -197,7 +197,7 @@ RESPONSE
 
 Description: prepares upload, gets storage file link
 
-request fields
+Request fields:
 
 folder_id - required, int
 
@@ -205,11 +205,11 @@ file_name - required
 
 file_size - required, int
 
-sample
+#####Sample
 
 REQUEST
 ```bash
-curl -k --data "folder_id=3432&file_name=sample.txt&file_size=11112" --user uploading@uploading.com:123456 https://api.uploading.com/files/upload
+curl -k --data "folder_id=3432&file_name=sample.txt&file_size=11112" --user testuser@uploading.com:123456 https://api.uploading.com/files/upload
 ```
 
 RESPONSE
