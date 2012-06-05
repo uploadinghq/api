@@ -5,14 +5,14 @@ The all-new Uploading.com API revealed. This is a REST-style API that uses JSON 
 
 #### REST API
 
-REST API HOST https://api.uploading.com
+REST API URL https://api.uploading.com
 
 #### HTTP authentication
 You should login with http authentication by passing your email and password.
 
 REQUEST
 ```bash
-curl -k --user  alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/info
+curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user/info
 ```
 
 RESPONSE
@@ -38,7 +38,7 @@ JSON and XML are supported for now. By default we're using XML. To get response 
 
 REQUEST
 ```bash
-curl -k --header "Accept:application/json" --user  alexeygeno@gmail.com:wrongpass https://sluggard.api.dev.uploading.com/user/info
+curl -k --header "Accept:application/json" --user  testuser@uploading.com:wrongpass https://api.uploading.com/user/info
 ```
 RESPONSE
 ```json
@@ -69,7 +69,7 @@ Below you can check status codes and short description.
 
 REQUEST
 ```bash
- curl -k -v --data "field=val"  --header  "Accept:text/xml" --user  alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/info
+ curl -k -v --data "field=val"  --header  "Accept:text/xml" --user  testuser@uploading.com:123456 https://api.uploading.com/user/info
 ```
 
 HEADER STATUS
@@ -100,7 +100,7 @@ sample
 
 REQUEST
 ```bash
-curl -k --user  alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/info
+curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user/info
 ```
 
 RESPONSE
@@ -129,7 +129,7 @@ sample
 
 REQUEST
 ```bash
-curl -k --get --data "folder_id=3434" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/user/files
+curl -k --get --data "folder_id=3434" --user testuser@uploading.com:123456 https://api.uploading.com/user/files
 ```
 
 RESPONSE
@@ -155,7 +155,7 @@ sample
 
 REQUEST
 ```bash
-curl -k --data "file_id=124&file_name=new_name.txt" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/files/rename
+curl -k --data "file_id=124&file_name=new_name.txt" --user testuser@uploading.com:123456 https://api.uploading.com/files/rename
 ```
 
 RESPONSE
@@ -181,7 +181,7 @@ sample
 
 REQUEST
 ```bash
-curl -k --get --data "file_id=124" --user uploading@uploading.com:123456 https://api.uploading.com/files/link
+curl -k --get --data "file_id=124" --user testuser@uploading.com:123456 https://api.uploading.com/files/link
 ```
 
 RESPONSE
