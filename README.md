@@ -1,6 +1,8 @@
 Uploading.com REST API
 =================
 
+The all-new Uploading.com API revealed. This is a REST-style API that uses JSON and XML for serialization and of course authentication.
+
 #### REST API
 
 REST API HOST https://api.uploading.com
@@ -30,7 +32,7 @@ RESPONSE
 ####
 
 #### Response data formats
-JSON and XML are supported for now. By default it is XML. To get response in JSON pass at HTTP header "Accept: aplication/json" 
+JSON and XML are supported for now. By default we're using XML. To get response in JSON fromat, pass additional HTTP header "Accept: aplication/json" 
 
 #####Sample wrong authorization with JSON response
 
@@ -47,9 +49,9 @@ RESPONSE
 Success status is standart HTTP status 200.
 
 Error codes are returned as standard HTTP status response header.
-Any additional info about error and hint about how tofix it are included in the body of HTTP response.
+Any additional info about errors and hints about how to fix it are included in the body of HTTP response.
 
-Below you can see codes and short description.
+Below you can check status codes and short description.
 
 400 - Bad input parameter
 
@@ -179,7 +181,7 @@ sample
 
 REQUEST
 ```bash
-curl -k --get --data "file_id=124" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/files/link
+curl -k --get --data "file_id=124" --user uploading@uploading.com:123456 https://api.uploading.com/files/link
 ```
 
 RESPONSE
@@ -207,7 +209,7 @@ sample
 
 REQUEST
 ```bash
-curl -k --data "folder_id=3432&file_name=sample.txt&file_size=11112" --user alexeygeno@gmail.com:123456 https://sluggard.api.dev.uploading.com/files/upload
+curl -k --data "folder_id=3432&file_name=sample.txt&file_size=11112" --user uploading@uploading.com:123456 https://api.uploading.com/files/upload
 ```
 
 RESPONSE
