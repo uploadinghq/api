@@ -117,6 +117,53 @@ RESPONSE
 </user>
 ```
 
+######GET /user/folders
+
+Description: gets data for building folders tree and info about active, inactive, banned, blocked, deleted and favorites files count. And info about all user files size.
+
+Request fields: none
+
+#####Sample
+
+#####
+
+REQUEST
+```bash
+curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user/folders
+```
+
+RESPONSE
+```xml
+<?xml version="1.0"?>
+<tree>
+   <files_count>
+      <active>77</active>
+      <inactive>0</inactive>
+      <banned>0</banned>
+      <blocked>0</blocked>
+      <deleted>99</deleted>
+      <favourite>0</favourite>
+      <files_size>123737512</files_size>
+   </files_count>
+   <folders>
+      <folder_id>3433</folder_id>
+      <name>eeee</name>
+      <create_date>1335541350</create_date>
+      <access_type>public</access_type>
+      <parent_id>0</parent_id>
+      <files_count>2</files_count>
+   </folders>
+   <folders>
+      <folder_id>3438</folder_id>
+      <name>eeee</name>
+      <create_date>1335541420</create_date>
+      <access_type>shared</access_type>
+      <parent_id>0</parent_id>
+      <files_count>2</files_count>
+   </folders>  
+</tree>
+```
+
 ######GET /user/files  --NOT COMPLETED--
 
 Description: gets folders/files tree
