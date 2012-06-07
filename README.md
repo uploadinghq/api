@@ -12,7 +12,7 @@ You should login with http authentication by passing your email and password.
 
 REQUEST
 ```bash
-curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user/info
+curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user
 ```
 
 RESPONSE
@@ -38,7 +38,7 @@ JSON and XML are supported for now. By default we're using XML. To get response 
 
 REQUEST
 ```bash
-curl -k --header "Accept:application/json" --user  testuser@uploading.com:wrongpass https://api.uploading.com/user/info
+curl -k --header "Accept:application/json" --user  testuser@uploading.com:wrongpass https://api.uploading.com/user
 ```
 RESPONSE
 ```json
@@ -69,7 +69,7 @@ Below you can check status codes and short description.
 
 REQUEST
 ```bash
- curl -k -v --data "field=val"  --header  "Accept:text/xml" --user  testuser@uploading.com:123456 https://api.uploading.com/user/info
+ curl -k -v --data "field=val"  --header  "Accept:text/xml" --user  testuser@uploading.com:123456 https://api.uploading.com/user
 ```
 
 HEADER STATUS
@@ -90,7 +90,7 @@ RESPONSE
 
 #### API methods
 
-######GET /user/info
+######GET /user
 
 Description: gets user info
 
@@ -100,7 +100,7 @@ Request fields: none
 
 REQUEST
 ```bash
-curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user/info
+curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user
 ```
 
 RESPONSE
@@ -117,7 +117,7 @@ RESPONSE
 </user>
 ```
 
-######GET /user/folders
+######GET /folders
 
 Description: gets data for building folders tree and info about active, inactive, banned, blocked, deleted and favorites files count. And info about all user files size.
 
@@ -129,7 +129,7 @@ Request fields: none
 
 REQUEST
 ```bash
-curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user/folders
+curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/folders
 ```
 
 RESPONSE
@@ -164,7 +164,7 @@ RESPONSE
 </tree>
 ```
 
-######GET /user/files  --NOT COMPLETED--
+######GET /folder/content
 
 Description: gets folders/files tree
 
@@ -188,7 +188,7 @@ RESPONSE
 ```
 
 
-######POST /files/rename 
+######POST /file/rename 
 
 Description: renames file
 
@@ -202,7 +202,7 @@ file_name - required
 
 REQUEST
 ```bash
-curl -k --data "file_id=124&file_name=new_name.txt" --user testuser@uploading.com:123456 https://api.uploading.com/files/rename
+curl -k --data "file_id=124&file_name=new_name.txt" --user testuser@uploading.com:123456 https://api.uploading.com/file/rename
 ```
 
 RESPONSE
@@ -216,7 +216,7 @@ RESPONSE
 ```
 
 
-######GET /files/link 
+######GET /file/link 
 
 Description: gets download file link
 
@@ -228,7 +228,7 @@ file_id - requireed, int
 
 REQUEST
 ```bash
-curl -k --get --data "file_id=124" --user testuser@uploading.com:123456 https://api.uploading.com/files/link
+curl -k --get --data "file_id=124" --user testuser@uploading.com:123456 https://api.uploading.com/file/link
 ```
 
 RESPONSE
@@ -240,7 +240,7 @@ RESPONSE
 </file>
 ```
 
-######POST /files/upload 
+######POST /file/upload 
 
 Description: prepares upload, gets storage file link
 
@@ -256,7 +256,7 @@ file_size - required, int
 
 REQUEST
 ```bash
-curl -k --data "folder_id=3432&file_name=sample.txt&file_size=11112" --user testuser@uploading.com:123456 https://api.uploading.com/files/upload
+curl -k --data "folder_id=3432&file_name=sample.txt&file_size=11112" --user testuser@uploading.com:123456 https://api.uploading.com/file/upload
 ```
 
 RESPONSE
