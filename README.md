@@ -208,7 +208,7 @@ RESPONSE
             <size>1711134</size>
             <downloads_count>0</downloads_count>
             <create_date>1335365975</create_date>
-            <name>Dscn0162 - &#x43A;&#x43E;&#x43F;&#x438;&#x44F;.jpg</name>
+            <name>Dscn0162 - image.jpg</name>
             <description></description>
             <code>e96fbm9e</code>
             <status>active</status>
