@@ -125,8 +125,6 @@ Request fields: none
 
 #####Sample
 
-#####
-
 REQUEST
 ```bash
 curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/folders
@@ -166,25 +164,65 @@ RESPONSE
 
 ######GET /folder/content
 
-Description: gets folders/files tree
+Description: gets content of folder(subfolders and files)
 
 Request fields:
 
-folder_id - requireed, 0 - root folder.
+folder_id - not requireed, default 0(root folder)
 
-#####
+page - pagination page number, default 1
+
+per_page - pagination records count for page, default 50
+
+
+#####Sample
 
 REQUEST
 ```bash
-curl -k --get --data "folder_id=3434" --user testuser@uploading.com:123456 https://api.uploading.com/user/files
+curl -k --get --data "folder_id=3434" --user testuser@uploading.com:123456 https://api.uploading.com/folder/content
 ```
 
 RESPONSE
 ```xml
-<?xml version="1.0"?>
-<files>
-           
-</files>
+<content>
+   <folders>
+      <data>
+         <3610>
+            <folder_id>3610</folder_id>
+            <name>aaaaaaa</name>
+            <create_date>1339091423</create_date>
+            <favourite>0</favourite>
+            <access_type>public</access_type>
+            <parent_id>3386</parent_id>               
+         </3610>
+      </data>
+      <total>1</total>
+      <page>1</page>
+      <per_page>50</per_page>
+      <next_exists/>         
+   </folders>
+   <files>
+      <data>
+         <203>
+            <file_id>203</file_id>
+            <size>1711134</size>
+            <downloads_count>0</downloads_count>
+            <create_date>1335365975</create_date>
+            <name>Dscn0162 - &#x43A;&#x43E;&#x43F;&#x438;&#x44F;.jpg</name>
+            <description></description>
+            <code>e96fbm9e</code>
+            <status>active</status>
+            <folder_id>3386</folder_id>
+            <type>image</type><favourite/>            
+         </203>         
+      </data>
+      <total>2</total>
+      <page>1</page>
+      <per_page>50</per_page>
+      <next_exists/>      
+   </files>      
+</content>
+
 ```
 
 
