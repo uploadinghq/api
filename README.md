@@ -235,7 +235,7 @@ RESPONSE
 ```xml
 <?xml version="1.0"?>
 <file>
-   <link>http://fs10.sluggard.www.dev.uploading.com/get_file/%3DMQ0ncR29nSAkGTonbQrteTGAPwTSfrDDW7HPzZpqynJLcDNSAtKmjJyiB2E0blFuvAJxUW2Di4bOkYhc6rbmemBXzZMjgPLnLhhL86Y2QmPd48EB-X5BTKVxbQ71AcXeYfp6yTXQXC6eqVJrQd7jlJ4I6RUG28Ww1JCfH5Zud7X7mTWhJqPS1tInA442tA0JlkXpcoNMlLCHK6yPHsLgSgk5BneaprWCrFd%7ChMi1Tp36%7Cs3Fj15SaeqLm8LvLMWQvKA0JwXQBiS1fSYIWyie5ieAxOwRm5pWsnDM-vQ0shBgv5aTj08PUlbxmAEzpdTJLzgGyk2Ufu2Au5zfcD4GUyHv7%7CWBKIe%7CuGO1Gd4hy-z</link>
+   <link>http://fs10.www.uploading.com/get_file/%3DMQ0ncR29nSAkGTonbQrteTGAPwTSfrDDW7HPzZpqynJLcDNSAtKmjJyiB2E0blFuvAJxUW2Di4bOkYhc6rbmemBXzZMjgPLnLhhL86Y2QmPd48EB-X5BTKVxbQ71AcXeYfp6yTXQXC6eqVJrQd7jlJ4I6RUG28Ww1JCfH5Zud7X7mTWhJqPS1tInA442tA0JlkXpcoNMlLCHK6yPHsLgSgk5BneaprWCrFd%7ChMi1Tp36%7Cs3Fj15SaeqLm8LvLMWQvKA0JwXQBiS1fSYIWyie5ieAxOwRm5pWsnDM-vQ0shBgv5aTj08PUlbxmAEzpdTJLzgGyk2Ufu2Au5zfcD4GUyHv7%7CWBKIe%7CuGO1Gd4hy-z</link>
    <session_id>5f218f903c6519b57c3e3e71c7c4ab0c</session_id>
 </file>
 ```
@@ -267,8 +267,8 @@ RESPONSE
    <name>sample.txt</name>
    <size>11112</size>
    <file_id>1607</file_id>
-   <upload_url>http://fs19.sluggard.www.dev.uploading.com/upload_file/%3D%3Dgs-FQYCplBXunFVu3BsPj%7CKYuvdqFLPKn8XKIwmWA7Seig5nmXx0iEQsPzGMVOX822z1aap-t%7CketAKnz9BBcj5GnkchBnrDk6YGhYCXjy4wOpl-ngpZmF0A5OgHVT9u87XZUnhK9IvGp4yVO99Tz5vMW8pQ1oUkb7ul3g3QaCuDlAgKhMPNqc</upload_url>
-   <progress_url>http://fs19.sluggard.www.dev.uploading.com/api_progress/%3D%3Dgs-FQYCplBXunFVu3BsPj%7CKYuvdqFLPKn8XKIwmWA7Seig5nmXx0iEQsPzGMVOX822z1aap-t%7CketAKnz9BBcj5GnkchBnrDk6YGhYCXjy4wOpl-ngpZmF0A5OgHVT9u87XZUnhK9IvGp4yVO99Tz5vMW8pQ1oUkb7ul3g3QaCuDlAgKhMPNqc</progress_url>
+   <upload_url>http://fs19.www.uploading.com/upload_file/%3D%3Dgs-FQYCplBXunFVu3BsPj%7CKYuvdqFLPKn8XKIwmWA7Seig5nmXx0iEQsPzGMVOX822z1aap-t%7CketAKnz9BBcj5GnkchBnrDk6YGhYCXjy4wOpl-ngpZmF0A5OgHVT9u87XZUnhK9IvGp4yVO99Tz5vMW8pQ1oUkb7ul3g3QaCuDlAgKhMPNqc</upload_url>
+   <progress_url>http://fs19.www.uploading.com/api_progress/%3D%3Dgs-FQYCplBXunFVu3BsPj%7CKYuvdqFLPKn8XKIwmWA7Seig5nmXx0iEQsPzGMVOX822z1aap-t%7CketAKnz9BBcj5GnkchBnrDk6YGhYCXjy4wOpl-ngpZmF0A5OgHVT9u87XZUnhK9IvGp4yVO99Tz5vMW8pQ1oUkb7ul3g3QaCuDlAgKhMPNqc</progress_url>
    <session_id>004c20d90c2db36a2f074666c4ec45ed</session_id>               
 </file>
 ```
