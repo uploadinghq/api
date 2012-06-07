@@ -170,9 +170,9 @@ Request fields:
 
 folder_id - not requireed, default 0(root folder)
 
-page - pagination page number, default 1
+page - not requireed, pagination page number, default 1
 
-per_page - pagination records count for page, default 50
+per_page - not requireed, pagination records count for page, default 50
 
 
 #####Sample
