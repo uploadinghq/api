@@ -82,7 +82,7 @@ RESPONSE
 ```xml
 <?xml version="1.0"?>
 <error>
-   <message>Request method not expected (generally should be GET or POST)</message>
+   <message>Request method is not expected (generally should be GET or POST)</message>
    <hint>Use correct method for this url</hint>
 </error>
 ```
@@ -284,7 +284,7 @@ Description: prepares upload, gets storage file link
 
 Request fields:
 
-folder_id - required, int
+folder_id - not requireed, default 0(root folder)
 
 file_name - required
 
