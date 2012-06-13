@@ -119,7 +119,7 @@ RESPONSE
 
 ######GET /folders
 
-Description: gets data for building folders tree and info about active, inactive, banned, blocked, deleted and favorites files count. And info about all user files size.
+Description: Gets folders for root folder.
 
 Request fields: none
 
@@ -133,38 +133,31 @@ curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/folders
 RESPONSE
 ```xml
 <?xml version="1.0"?>
-<tree>
-   <files_count>
-      <active>77</active>
-      <inactive>0</inactive>
-      <banned>0</banned>
-      <blocked>0</blocked>
-      <deleted>99</deleted>
-      <favourite>0</favourite>
-      <files_size>123737512</files_size>
-   </files_count>
+<root>
    <folders>
-      <folder_id>3433</folder_id>
-      <name>eeee</name>
-      <create_date>1335541350</create_date>
-      <access_type>public</access_type>
-      <parent_id>0</parent_id>
-      <files_count>2</files_count>
+      <folder_id>3590</folder_id>
+      <name>cccc</name>
+      <create_date>1339077216</create_date>
+      <access_type>public</access_type>      
    </folders>
    <folders>
-      <folder_id>3438</folder_id>
-      <name>eeee</name>
-      <create_date>1335541420</create_date>
-      <access_type>shared</access_type>
-      <parent_id>0</parent_id>
-      <files_count>2</files_count>
-   </folders>  
-</tree>
+      <folder_id>3589</folder_id>
+      <name>vvvv</name>
+      <create_date>1339077194</create_date>
+      <access_type>public</access_type>
+   </folders>
+   <folders>
+      <folder_id>3588</folder_id>
+      <name>sasasasa</name>
+      <create_date>1339077116</create_date>
+      <access_type>public</access_type>
+   </folders>
+</root>
 ```
 
 ######GET /folder/content
 
-Description: gets content of folder(subfolders and files)
+Description: gets files content of folder
 
 Request fields:
 
@@ -184,45 +177,35 @@ curl -k --get --data "folder_id=3434" --user testuser@uploading.com:123456 https
 
 RESPONSE
 ```xml
+<?xml version="1.0"?>
 <content>
-   <folders>
-      <data>
-         <3610>
-            <folder_id>3610</folder_id>
-            <name>aaaaaaa</name>
-            <create_date>1339091423</create_date>
-            <favourite>0</favourite>
-            <access_type>public</access_type>
-            <parent_id>3386</parent_id>               
-         </3610>
-      </data>
-      <total>1</total>
-      <page>1</page>
-      <per_page>50</per_page>
-      <next_exists/>         
-   </folders>
    <files>
-      <data>
-         <203>
-            <file_id>203</file_id>
-            <size>1711134</size>
-            <downloads_count>0</downloads_count>
-            <create_date>1335365975</create_date>
-            <name>Dscn0162 - image.jpg</name>
-            <description></description>
-            <code>e96fbm9e</code>
-            <status>active</status>
-            <folder_id>3386</folder_id>
-            <type>image</type><favourite/>            
-         </203>         
-      </data>
-      <total>2</total>
-      <page>1</page>
-      <per_page>50</per_page>
-      <next_exists/>      
-   </files>      
+      <file_id>356</file_id>
+      <size>1711134</size>
+      <downloads_count>0</downloads_count>
+      <create_date>1335541353</create_date>
+      <name>Dscn0162 - file.jpg</name>
+      <description></description>
+      <code>3667ae3c</code>
+      <status>active</status>
+      <folder_id>3433</folder_id>
+      <type>image</type>
+      <favourite/>         
+   </files>
+   <files>
+      <file_id>2705</file_id>
+      <size>646</size>
+      <downloads_count>0</downloads_count>
+      <create_date>1339599659</create_date>
+      <name>class.Api_rest_action_user_info.php</name>
+      <description></description>
+      <code>27165d36</code>
+      <status>active</status>
+      <folder_id>3385</folder_id>
+      <type>script</type>
+      <favourite>0</favourite>
+   </files>
 </content>
-
 ```
 
 
