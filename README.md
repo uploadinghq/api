@@ -113,7 +113,7 @@ RESPONSE
    <files_size>177.86605358123796</files_size>
    <files_size_limit>0</files_size_limit>
    <files_count>108</files_count>
-    <premium_expire>1333698313</premium_expire>
+   <premium_expire>1333698313</premium_expire>
 </user>
 ```
 
@@ -139,18 +139,21 @@ RESPONSE
       <name>cccc</name>
       <create_date>1339077216</create_date>
       <access_type>public</access_type>      
+      <files_count>12</files_count>
+   </folders>
+   <folders>
+      <folder_id>3433</folder_id>
+      <name>eeee</name>
+      <create_date>1335541350</create_date>
+      <access_type>public</access_type>
+      <files_count>2</files_count>
    </folders>
    <folders>
       <folder_id>3589</folder_id>
       <name>vvvv</name>
       <create_date>1339077194</create_date>
       <access_type>public</access_type>
-   </folders>
-   <folders>
-      <folder_id>3588</folder_id>
-      <name>sasasasa</name>
-      <create_date>1339077116</create_date>
-      <access_type>public</access_type>
+      <files_count>4</files_count>
    </folders>
 </root>
 ```
