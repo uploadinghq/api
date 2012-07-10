@@ -8,9 +8,15 @@ The all-new Uploading.com API revealed. This is a REST-style API that uses JSON 
 REST API URL https://api.uploading.com
 
 #### HTTP authentication
-You should login with http authentication by passing your email and password.
+For now you should login with http authentication by passing your base64 wrapped email and password.
 
-REQUEST
+Clean HTTP request sample
+```
+GET /user HTTP/1.1
+Authorization: Basic dGVzdHVzZXJAdXBsb2FkaW5nLmNvbToxMjM0NTY=
+```
+
+request sample with with [curl] (http://curl.haxx.se)  command
 ```bash
 curl -k --user  testuser@uploading.com:123456 https://api.uploading.com/user
 ```
